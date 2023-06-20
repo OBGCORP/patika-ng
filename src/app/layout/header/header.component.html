@@ -1,0 +1,29 @@
+<p id="demo">{{ hello }}</p><br/>
+<span>{{ hello }}</span><br/>
+<input type="text"[(ngModel)]="hello"/><br/>
+<select [(ngModel)]="selectedOption">
+    <option value="option1">Secenek1</option>
+    <option value="option2">Secenek2</option>
+</select>
+<textarea [(ngModel)]="hello"></textarea>
+<button (click)="handleButtonClick()">Change hello text</button>
+<div [innerHTML]="helloParagraph"></div>
+<div [id]="'division_' + uniqueId">
+    Test
+</div>
+<div *ngIf="hello.length === 5">
+    Suanda hello degiskeni 5 karakterlidir
+</div>
+
+<div #divElement>
+    <p>
+        Bu elementi yakalayacagiz.
+    </p>
+</div>
+
+<ol>
+    <li *ngFor="let todoItem of todoList; let i = index">{{ i <= 0 ? todoItem : 'Index 0\'dan buyuk.'}}</li>
+</ol>
+<app-footer [footerText]="hello" (onFooterTextChange)="handleHelloTextChange($event)"></app-footer>
+<app-button [buttonText]="'Kayit Ol'" (onButtonClick)="handleSignUpButtonClick()"></app-button>
+<app-button [buttonText]="'Giris Yap'" (onButtonClick)="handleLogInButtonClick()" [buttonType]="'secondary'"></app-button>

@@ -1,0 +1,10 @@
+<div>
+    <button [ngClass]="{
+            'btn-primary': buttonType === 'primary',
+            'btn-secondary': buttonType === 'secondary'
+        }" 
+        type="button" 
+        (click)="handleButtonClick()">
+        {{ buttonText }}
+    </button>
+</div>
