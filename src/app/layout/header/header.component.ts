@@ -18,6 +18,11 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges{
     'Angular *ngFor Ekranda gosterilecek'
   ];
 
+  creationDate = new Date(2023, 5, 21);
+  amount = 1350.85;
+
+  currentAmount = 2;
+
   constructor(){
     console.log(this.divElement)
   };
