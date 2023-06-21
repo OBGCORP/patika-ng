@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-
+import { TodoService } from 'src/app/todo.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -23,9 +23,9 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges{
 
   currentAmount = 2;
 
-  constructor(){
-    console.log(this.divElement)
-  };
+  constructor(
+    private todoService: TodoService
+  ){  };
 
   ngOnChanges(changes: SimpleChanges): void {
       console.log('ngOnChanges function works with', changes)
@@ -59,5 +59,12 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnChanges{
 
   handleLogInButtonClick(){
     // giris yapma islemi
+  }
+
+  handleAddNewTodoItem(){
+    this.todoService.addTodoItem({
+      id: 2,
+      title: 'New Todo Item'
+    })
   }
 }

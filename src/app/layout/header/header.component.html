@@ -42,6 +42,8 @@
 <app-button [buttonText]="'Kayit Ol'" (onButtonClick)="handleSignUpButtonClick()"></app-button>
 <app-button [buttonText]="'Giris Yap'" (onButtonClick)="handleLogInButtonClick()" [buttonType]="'secondary'"></app-button>
 
+<app-button [buttonText]="'Add new Todo Item'" (onButtonClick)="handleAddNewTodoItem()"></app-button>
+
 <p>{{ creationDate | date:"dd-MM-yyyy"}}</p>
 <p>{{amount | currency:"TRY" | lowercase}}</p>
 <p>{{currentAmount | exponentialStrength: 10}}</p>

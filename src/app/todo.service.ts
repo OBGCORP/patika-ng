@@ -5,12 +5,17 @@ import { Todo } from './todo';
   providedIn: 'root'
 })
 export class TodoService {
+  todoList:Todo[] = [
+    { id: 1, title: 'create a service for angular'}
+  ];
 
   constructor() { }
 
   getTodoList(): Todo[]{
-    return [
-      { id: 1, title: 'create a service for angular'}
-    ];
+    return this.todoList;
+  }
+
+  addTodoItem(todoItem: Todo): void{
+    this.todoList.push(todoItem);
   }
 }
